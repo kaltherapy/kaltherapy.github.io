@@ -10,9 +10,11 @@
   <link rel="stylesheet" href="../styles.css">
   <script src="../config.js"></script>
   <script src="../site.js"></script>
+  <script src="../a11y.js" defer></script>
 </head>
 <body>
-  <main>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" tabindex="-1">
     <section>
       <div class="wrap" style="max-width:720px">
         <h1>Privacy note</h1>
@@ -20,7 +22,7 @@
         <p><strong><span data-config="THERAPIST_NAME">[Name]</span></strong> collects your name, phone number and email when you book, only so we can confirm your session and send you reminders (by email and WhatsApp).</p>
         <p>Bookings are handled through Google Calendar. The details from the form are saved in a private Google Sheet. This site uses the Meta (Facebook) Pixel to measure how well our ads work; it may set cookies in your browser.</p>
         <p>We never sell your details. To see, change or delete your information, contact us at [your email] or <span data-config="PHONE_DISPLAY">[phone]</span>.</p>
-        <p><a href="./">← Back</a> · <a href="../privacy.html" lang="he">עברית</a></p>
+        <p><a href="./">← Back</a> · <a href="../privacy.html" lang="he">עברית</a> · <a href="accessibility.html">Accessibility</a></p>
       </div></div>
     </section>
   </main>

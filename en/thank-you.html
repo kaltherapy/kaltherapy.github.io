@@ -13,9 +13,11 @@
   <script src="../config.js"></script>
   <!-- Meta Pixel: added automatically by site.js once META_PIXEL_ID is set in config.js. -->
   <script src="../site.js"></script>
+  <script src="../a11y.js" defer></script>
 </head>
 <body class="no-wa-float">
-  <main class="thanks">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" tabindex="-1" class="thanks">
     <div class="wrap">
       <div class="card">
         <svg class="horizon-mark" viewBox="0 0 68 40" aria-hidden="true"><path d="M0 34h68" stroke="currentColor" stroke-width="1.6"/><path d="M18 34a16 16 0 0 1 32 0" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
@@ -45,6 +47,7 @@
         <p style="margin-top:20px"><a href="./" class="back-link">← Back to the site</a></p>
       </div>
     </div>
+    <p class="muted" style="text-align:center"><a href="cancellation.html">Cancellation policy</a> · <a href="accessibility.html">Accessibility</a></p>
   </main>
   <script src="../thanks.js"></script>
 </body>

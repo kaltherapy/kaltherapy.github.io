@@ -342,3 +342,36 @@ img[src$="massage-103.jpg"] { object-position: 50% 30%; }
 @keyframes tg-sink { from { transform: translateY(-0.12em); } }
 @keyframes tg-float { from { transform: translateY(0.1em); letter-spacing: 0.12em; } }
 @media (prefers-reduced-motion: reduce) { .tagline span { animation: none !important; } }
+
+/* ---------- Accessibility ---------- */
+.skip-link { position: absolute; inset-inline-start: 12px; top: -60px; z-index: 10000; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 6px; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; }
+input:focus-visible { outline: 3px solid var(--clay); }
+
+.a11y-btn { position: fixed; inset-inline-start: 0; top: 50%; transform: translateY(-50%); z-index: 9000; width: 48px; height: 48px; border: 0; border-start-end-radius: 10px; border-end-end-radius: 10px; background: var(--ink); color: #fff; cursor: pointer; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); }
+[dir="rtl"] .a11y-btn { border-radius: 10px 0 0 10px; inset-inline-start: auto; inset-inline-end: 0; }
+.a11y-btn:hover { background: var(--clay); }
+.a11y-panel { position: fixed; top: 50%; transform: translateY(-50%); inset-inline-end: 56px; z-index: 9001; width: min(300px, calc(100vw - 72px)); background: #fff; color: #1b1612; border-radius: 12px; padding: 14px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); display: grid; gap: 8px; font-family: var(--sans); font-size: 16px; }
+[dir="ltr"] .a11y-panel { inset-inline-end: auto; inset-inline-start: 56px; }
+.a11y-panel[hidden] { display: none; }
+.a11y-head { display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
+.a11y-x { border: 0; background: none; font-size: 1.6rem; line-height: 1; cursor: pointer; color: inherit; padding: 2px 8px; }
+.a11y-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.a11y-panel button:not(.a11y-x) { border: 1px solid #cdbfaf; background: #faf6ef; color: #1b1612; border-radius: 8px; padding: 10px 12px; font: inherit; text-align: start; cursor: pointer; }
+.a11y-panel button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.a11y-panel .a11y-reset { text-align: center; }
+.a11y-panel a { color: var(--clay-d); text-align: center; padding-top: 4px; }
+
+html.a11y-contrast body, html.a11y-contrast section, html.a11y-contrast .card, html.a11y-contrast .price, html.a11y-contrast footer { background: #000 !important; color: #fff !important; }
+html.a11y-contrast * { color: #fff !important; border-color: #fff !important; text-shadow: none !important; }
+html.a11y-contrast a { color: #ffe066 !important; }
+html.a11y-contrast .btn { background: #ffe066 !important; color: #000 !important; }
+html.a11y-contrast .hero::after { background: rgba(0, 0, 0, 0.75) !important; }
+html.a11y-contrast .a11y-panel, html.a11y-contrast .a11y-panel * { background: #fff !important; color: #000 !important; border-color: #000 !important; }
+html.a11y-contrast .a11y-panel button[aria-pressed="true"] { background: #000 !important; color: #fff !important; }
+html.a11y-links a { text-decoration: underline !important; text-underline-offset: 3px; outline: 2px dashed currentColor; outline-offset: 2px; }
+html.a11y-font, html.a11y-font * { font-family: Arial, "Assistant", sans-serif !important; letter-spacing: 0.01em !important; }
+html.a11y-still *, html.a11y-still *::before, html.a11y-still *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print { .a11y-btn, .a11y-panel, .skip-link { display: none !important; } }

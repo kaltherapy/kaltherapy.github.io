@@ -26,8 +26,10 @@
   <!-- All settings (booking link, Pixel ID, phone, address, hours, media) live in ../config.js -->
   <script src="../config.js"></script>
   <script src="../site.js"></script>
+  <script src="../a11y.js" defer></script>
 </head>
 <body class="has-sticky">
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Horizon symbol (line + half sun), reused as the logo mark -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -62,7 +64,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <div class="proof">
       <div class="wrap">
         <div>
@@ -224,6 +226,7 @@
         <details><summary>How many sessions will I need?</summary><p>Many people feel relief after the first session. For long-standing pain that keeps coming back, a few sessions in a row are usually worth it - that's what the series of 3 and 7 are for.</p></details>
         <details><summary>I have a medical condition or I'm pregnant. Can I come?</summary><p>Tell me before the session. In some cases we'll adapt the treatment, and sometimes we'll ask for a doctor's OK first.</p></details>
         <details><summary>What should I bring?</summary><p>Nothing. Towels and oils are at the clinic. Try to arrive a few minutes early, without rushing.</p></details>
+        <details><summary>What if I need to cancel?</summary><p>You can cancel or reschedule free of charge up to 24 hours before the session, with a WhatsApp message. Later than that: 50% of the price. Illness, reserve duty or an emergency: no charge. <a href="cancellation.html">Full cancellation policy</a>.</p></details>
         <details><summary>Where is the clinic?</summary><p>Derech HaArava 48, Geva Carmel - close to Atlit, Ein Hod, Tirat Carmel and south Haifa.</p></details>
       </div>
     </section>
@@ -240,7 +243,7 @@
             <li>₪300 per session, no commitment.</li>
             <li>Full privacy, and a towel throughout the session.</li>
             <li>You're welcome to bring someone with you.</li>
-            <li>A WhatsApp reminder the day before.</li>
+            <li>A WhatsApp reminder the day before, and free cancellation up to 24 hours before (<a href="cancellation.html">cancellation policy</a>).</li>
           </ul>
           <!-- Call / WhatsApp / navigation buttons (built from config.js) -->
           <div class="talk-first">
@@ -285,7 +288,7 @@
       <a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">Amit Kaliskar</span></a>
       <p>Holistic medical massage · Between depth and gentleness</p>
       <p><span data-contact="small"></span></p>
-      <p><a href="privacy.html">Privacy</a> · <a href="../" lang="he">עברית</a></p>
+      <p><a href="privacy.html">Privacy</a> · <a href="cancellation.html">Cancellation policy</a> · <a href="accessibility.html">Accessibility</a> · <a href="../" lang="he">עברית</a></p>
     </div>
   </footer>
 

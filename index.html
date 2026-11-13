@@ -28,8 +28,10 @@
   <script src="config.js"></script>
   <!-- site.js loads the Meta Pixel automatically once META_PIXEL_ID is set in config.js -->
   <script src="site.js"></script>
+  <script src="a11y.js" defer></script>
 </head>
 <body class="has-sticky">
+  <a class="skip-link" href="#main">דלגו לתוכן</a>
 
   <!-- Horizon symbol (line + half sun), reused as the logo mark -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -64,7 +66,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <div class="proof">
       <div class="wrap">
         <div>
@@ -226,6 +228,7 @@
         <details><summary>כמה טיפולים צריך?</summary><p>הרבה אנשים מרגישים הקלה כבר אחרי הטיפול הראשון. לכאב ותיק שחוזר, בדרך כלל כדאי כמה טיפולים ברצף - ובשביל זה יש סדרות של 3 ושל 7.</p></details>
         <details><summary>יש לי בעיה רפואית או הריון. אפשר?</summary><p>ספרו לי לפני הטיפול. במקרים מסוימים נתאים את הטיפול, ולפעמים נבקש קודם אישור רופא.</p></details>
         <details><summary>מה להביא?</summary><p>שום דבר. מגבות ושמנים יש בקליניקה. כדאי להגיע כמה דקות לפני, בלי למהר.</p></details>
+        <details><summary>ואם צריך לבטל?</summary><p>אפשר לבטל או להזיז בלי עלות עד 24 שעות לפני הטיפול, בהודעה בוואטסאפ. ביטול מאוחר יותר: 50% מהמחיר. במקרים של מחלה, מילואים או חירום - בלי חיוב. <a href="cancellation.html">למדיניות הביטולים המלאה</a>.</p></details>
         <details><summary>איפה הקליניקה?</summary><p>דרך הערבה 48, גבע כרמל - קרוב לעתלית, עין הוד, טירת כרמל ודרום חיפה.</p></details>
       </div>
     </section>
@@ -242,7 +245,7 @@
             <li>300 ₪ לטיפול, בלי התחייבות.</li>
             <li>פרטיות מלאה, ומגבת לאורך כל הטיפול.</li>
             <li>אפשר להגיע עם מלווה.</li>
-            <li>תזכורת בוואטסאפ יום לפני.</li>
+            <li>תזכורת בוואטסאפ יום לפני, וביטול חינם עד 24 שעות לפני (<a href="cancellation.html">מדיניות ביטולים</a>).</li>
           </ul>
           <!-- Call / WhatsApp / navigation buttons (built from config.js) -->
           <div class="talk-first">
@@ -287,7 +290,7 @@
       <a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">עמית קליסקר</span></a>
       <p>עיסוי רפואי הוליסטי · בין עומק לרוך</p>
       <p><span data-contact="small"></span></p>
-      <p><a href="privacy.html">מדיניות פרטיות</a> · <a href="en/" lang="en">English</a></p>
+      <p><a href="privacy.html">מדיניות פרטיות</a> · <a href="cancellation.html">מדיניות ביטולים</a> · <a href="accessibility.html">הצהרת נגישות</a> · <a href="en/" lang="en">English</a></p>
     </div>
   </footer>
 
