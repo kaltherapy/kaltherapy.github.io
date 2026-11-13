@@ -349,11 +349,11 @@ img[src$="massage-103.jpg"] { object-position: 50% 30%; }
 a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; }
 input:focus-visible { outline: 3px solid var(--clay); }
 
-.a11y-btn { position: fixed; inset-inline-start: 0; top: 50%; transform: translateY(-50%); z-index: 9000; width: 48px; height: 48px; border: 0; border-start-end-radius: 10px; border-end-end-radius: 10px; background: var(--ink); color: #fff; cursor: pointer; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); }
-[dir="rtl"] .a11y-btn { border-radius: 10px 0 0 10px; inset-inline-start: auto; inset-inline-end: 0; }
+.a11y-btn { position: fixed; inset-inline-end: 18px; bottom: 92px; z-index: 9000; width: 48px; height: 48px; border: 2px solid #fff; border-radius: 50%; background: var(--ink); color: #fff; cursor: pointer; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); }
+.has-sticky .a11y-btn { bottom: 92px; }
+@media (max-width: 760px) { .has-sticky .a11y-btn { bottom: 96px; } }
 .a11y-btn:hover { background: var(--clay); }
-.a11y-panel { position: fixed; top: 50%; transform: translateY(-50%); inset-inline-end: 56px; z-index: 9001; width: min(300px, calc(100vw - 72px)); background: #fff; color: #1b1612; border-radius: 12px; padding: 14px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); display: grid; gap: 8px; font-family: var(--sans); font-size: 16px; }
-[dir="ltr"] .a11y-panel { inset-inline-end: auto; inset-inline-start: 56px; }
+.a11y-panel { position: fixed; bottom: 150px; inset-inline-end: 18px; z-index: 9001; width: min(300px, calc(100vw - 72px)); background: #fff; color: #1b1612; border-radius: 12px; padding: 14px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); display: grid; gap: 8px; font-family: var(--sans); font-size: 16px; }
 .a11y-panel[hidden] { display: none; }
 .a11y-head { display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; }
 .a11y-x { border: 0; background: none; font-size: 1.6rem; line-height: 1; cursor: pointer; color: inherit; padding: 2px 8px; }
