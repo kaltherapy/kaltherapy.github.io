@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>You're booked | Amit Kaliskar</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Bellefair&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../config.js"></script>
+  <!-- Meta Pixel: added automatically by site.js once META_PIXEL_ID is set in config.js. -->
+  <script src="../site.js"></script>
+</head>
+<body class="no-wa-float">
+  <main class="thanks">
+    <div class="wrap">
+      <div class="card">
+        <svg class="horizon-mark" viewBox="0 0 68 40" aria-hidden="true"><path d="M0 34h68" stroke="currentColor" stroke-width="1.6"/><path d="M18 34a16 16 0 0 1 32 0" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h1 id="title">You're booked!</h1>
+        <p class="muted">Google emails you a confirmation with a calendar invite, and you'll get a reminder the day before.</p>
+
+        <div class="when" id="when" hidden></div>
+
+        <div class="cal-buttons" id="cal-buttons" hidden>
+          <a class="btn" id="gcal" target="_blank" rel="noopener">Add to Google Calendar</a>
+          <a class="btn btn-ghost" id="ics" download="massage.ics">Add to Apple / Outlook calendar</a>
+        </div>
+        <p class="muted" id="no-time" hidden>Can't see the confirmation? Check your spam folder, or message me on WhatsApp.</p>
+
+        <div class="prep">
+          <h3>Before you come</h3>
+          <ul>
+            <li><strong data-config="ADDRESS">Derech HaArava 48, Geva Carmel</strong>. [Parking / how to find the door]</li>
+            <li>Nothing to bring - towels and oils are at the clinic.</li>
+            <li>Eat lightly an hour or two before, and arrive 5 minutes early.</li>
+            <li>If you have an injury, are pregnant or have a medical condition, tell me in the short talk at the start.</li>
+          </ul>
+          <p class="muted">Need to change the time? Use the link in Google's confirmation email, or just get in touch:</p>
+        </div>
+        <div class="contact-grid" data-contact></div>
+
+        <p style="margin-top:20px"><a href="./" class="back-link">← Back to the site</a></p>
+      </div>
+    </div>
+  </main>
+  <script src="../thanks.js"></script>
+</body>
+</html>

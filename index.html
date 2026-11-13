@@ -1,0 +1,299 @@
+<!doctype html>
+<!-- Hebrew main page. Brand "בין" (בין עומק לרוך) - copy and design follow the approved demo-he.html
+     and COPY-REVIEW.md. The English version is en/index.html. -->
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>עמית קליסקר | עיסוי רפואי הוליסטי בגבע כרמל</title>
+  <meta name="description" content="בין עומק לרוך. עיסוי רפואי עמוק באווירה של ספא, בקליניקה פרטית בגבע כרמל. שעה ורבע, 300 ₪. גם בשישי, במוצ&quot;ש ובראשון בערב.">
+  <!-- Social preview (when the link is shared on WhatsApp/Facebook) -->
+  <meta property="og:title" content="בין עומק לרוך | עמית קליסקר, גבע כרמל">
+  <meta property="og:description" content="עיסוי רפואי עמוק באווירה של ספא. שעה ורבע, 300 ₪. גם בשישי ובמוצ&quot;ש.">
+  <meta property="og:image" content="https://kaltherapy.co.il/photos/web-massage/massage-160.jpg">
+  <meta property="og:locale" content="he_IL">
+  <link rel="canonical" href="https://kaltherapy.co.il/">
+  <link rel="alternate" hreflang="he" href="https://kaltherapy.co.il/">
+  <link rel="alternate" hreflang="en" href="https://kaltherapy.co.il/en/">
+  <link rel="alternate" hreflang="x-default" href="https://kaltherapy.co.il/">
+  <meta property="og:url" content="https://kaltherapy.co.il/">
+  <meta name="theme-color" content="#2b231d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Bellefair&family=Frank+Ruhl+Libre:wght@300;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- All settings (booking link, Pixel ID, phone, address, hours, media) live in config.js -->
+  <script src="config.js"></script>
+  <!-- site.js loads the Meta Pixel automatically once META_PIXEL_ID is set in config.js -->
+  <script src="site.js"></script>
+</head>
+<body class="has-sticky">
+
+  <!-- Horizon symbol (line + half sun), reused as the logo mark -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="hz" viewBox="0 0 68 40"><path d="M0 34h68" stroke="currentColor" stroke-width="1.6"/><path d="M18 34a16 16 0 0 1 32 0" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  </svg>
+
+  <div class="bar">
+    <div class="wrap">
+      <a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">עמית קליסקר</span></a>
+      <nav><a href="#between">הגישה</a><a href="#focus">מיקודים</a><a href="#session">הטיפול</a><a href="#about">עליי</a><a href="#prices">מחירים</a><a class="btn sm" href="#book">לקביעת טיפול</a></nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-media" id="hero-media">
+      <div class="placeholder">תמונה או סרטון ראשי<br>HERO_IMAGE / HERO_VIDEO ב-config.js</div>
+    </div>
+    <div class="wrap">
+      <div class="kicker">עיסוי רפואי הוליסטי · גבע כרמל</div>
+      <h1 class="tagline" aria-label="בין עומק לרוך"><span class="t-bein">בין</span><span class="t-deep">עומק</span><span class="t-soft">לרוך</span></h1>
+      <p class="lead">ידיים של עיסוי רפואי, פינוק של ספא. שעה ורבע בקליניקה פרטית למרגלות הכרמל - כדי לצאת קלים, רגועים ונינוחים בגוף.</p>
+      <div class="facts">
+        <div><b>שעה ורבע</b>טיפול מלא</div>
+        <div><b>300 ₪</b>לטיפול, מחיר אחיד</div>
+        <div><b>גבע כרמל</b>קליניקה פרטית</div>
+        <div><b>סופ"ש</b>שישי, מוצ"ש, ראשון בערב</div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#book">לקביעת טיפול <span class="arr">←</span></a>
+        <span class="next next-slot"><i></i>המועד הפנוי הבא: <b class="js-next">-</b></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="proof">
+      <div class="wrap">
+        <div>
+          <q>היה מעולה, מפנק ומושקע! הגב מרגיש הרבה יותר טוב והתחושה מצוינת.</q>
+          <small>יום אחרי הטיפול</small>
+        </div>
+        <span class="wa-chip">● מתוך הודעת וואטסאפ אמיתית</span>
+      </div>
+    </div>
+
+    <!-- 01 Pain -->
+    <section id="pain">
+      <div class="wrap">
+        <div class="label"><span class="num">01</span>זה בשבילכם אם</div>
+        <h2>הגוף סוחב יותר<br>ממה שנדמה</h2>
+        <div class="pain">
+          <p>הצוואר מתקשה כבר בצהריים, אחרי עוד יום מול המסך.</p>
+          <p>הגב התחתון שוב מזכיר את עצמו - בבוקר, בנהיגה, אחרי שמרימים את הילדים.</p>
+          <p>המתח של התקופה נכנס לכתפיים ולא יוצא, גם בלילה.</p>
+          <p>באמצע השבוע אין זמן. בסוף השבוע כבר אין כוח.</p>
+        </div>
+        <p class="turn">הגוף לא צריך עוד "מסאז' נחמד". הוא צריך מישהו שיבין מאיפה הכאב מגיע - וזמן להשתחרר באמת.</p>
+      </div>
+    </section>
+
+    <!-- 02 Between medicine and spa -->
+    <section id="between" class="tight">
+      <div class="wrap">
+        <svg class="horizon-mark" aria-hidden="true"><use href="#hz"/></svg>
+        <div class="label"><span class="num">02</span>הגישה</div>
+        <h2>בין רפואה לספא</h2>
+        <p class="muted" style="max-width:640px">כל עיסוי טוב מתחיל בהבנה של הגוף. רוב הטיפולים בוחרים צד: קליני ומהיר, או נעים ושטחי. אצלי אין צורך לבחור.</p>
+        <div class="between">
+          <div><div class="tag">הידיים</div><h3>של עיסוי רפואי</h3><p class="muted">רקמות עמוקות ונקודות טריגר, עם היכרות מעמיקה עם הגוף. לא רק איפה כואב - אלא למה.</p></div>
+          <div><div class="tag">הפינוק</div><h3>של ספא יוקרה</h3><p class="muted">אחרי עבודה בספא יוקרה בקיסריה, הבאתי את אותה תשומת לב לקליניקה: אור רך, שמנים אתריים ונוכחות מלאה.</p></div>
+          <div><div class="tag">הזמן</div><h3>שהוא רק שלכם</h3><p class="muted">שעה ורבע, לא 45 דקות. ובשעות שבהן באמת יש לכם זמן: שישי, מוצ"ש וראשון בערב.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Focus: one session, three focuses ("לקביעה" passes the focus to the booking form) -->
+    <section id="focus" class="tight">
+      <div class="wrap">
+        <div class="label"><span class="num">03</span>מיקודים</div>
+        <h2>טיפול אחד<br>שלושה מיקודים</h2>
+        <p class="muted" style="max-width:640px">אני מטפל בגוף כולו - מהראש ועד כפות הרגליים. בכל טיפול בוחרים איפה לשים את הדגש, או מחליטים ביחד בשיחה בהתחלה.</p>
+        <div class="focus">
+          <article><img src="photos/web-massage/massage-164.jpg" alt="עבודה על צוואר וכתפיים" style="object-position:30% 40%" loading="lazy"><h3>גב, צוואר וכתפיים</h3><p class="muted">לימים ארוכים מול מסך, לנהיגה, ולמתח שנתקע בכתפיים.</p><div class="meta">שעה ורבע · 300 ₪<a href="#book" data-focus="גב, צוואר וכתפיים">לקביעה</a></div></article>
+          <article><img src="photos/web-massage/massage-096.jpg" alt="עיסוי גוף מלא" style="object-position:50% 50%" loading="lazy"><h3>איפוס לגוף כולו</h3><p class="muted">מהראש ועד כפות הרגליים, בקצב רגוע. כשהגוף פשוט צריך לנשום.</p><div class="meta">שעה ורבע · 300 ₪<a href="#book" data-focus="איפוס לגוף כולו">לקביעה</a></div></article>
+          <article><img src="photos/web-massage/massage-113.jpg" alt="עבודה על רגליים וכפות רגליים" style="object-position:40% 50%" loading="lazy"><h3>רגליים וכפות רגליים</h3><p class="muted">ליום שלם על הרגליים, לאימונים ולהליכות ארוכות.</p><div class="meta">שעה ורבע · 300 ₪<a href="#book" data-focus="רגליים וכפות רגליים">לקביעה</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Session: arched video + steps -->
+    <section id="session" class="session">
+      <div class="wrap see">
+        <div class="vid" id="video-wrap">
+          <video id="session-video" muted loop playsinline preload="metadata"></video>
+          <button type="button" class="video-toggle" id="video-toggle" aria-label="השהיית הסרטון" hidden></button>
+        </div>
+        <div>
+          <div class="label"><span class="num">04</span>הטיפול</div>
+          <h2>שעה ורבע,<br>שלושה שלבים</h2>
+          <div class="steps">
+            <div class="step"><div class="thumb" data-session-photo="0"></div><div><h3><span>א.</span>שיחה קצרה</h3><p class="muted">מה כואב, ממתי, ואיך נראה היום-יום שלכם - כדי שהטיפול יהיה מדויק.</p></div></div>
+            <div class="step"><div class="thumb" data-session-photo="1"></div><div><h3><span>ב.</span>הטיפול</h3><p class="muted">עבודה עמוקה ומדויקת, בקצב שלכם ובלחץ שנוח לכם. אפשר לשנות בכל רגע.</p></div></div>
+            <div class="step"><div class="thumb" data-session-photo="2"></div><div><h3><span>ג.</span>לשמור על התוצאה</h3><p class="muted">כמה טיפים פשוטים לבית - תנועה, נשימה והרגלים - כדי שההקלה תימשך.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 About -->
+    <section id="about">
+      <div class="wrap about">
+        <figure>
+          <div id="about-photo"><div class="placeholder">תמונה של עמית</div></div>
+          <figcaption data-config="THERAPIST_NAME">עמית קליסקר</figcaption>
+        </figure>
+        <div>
+          <div class="label"><span class="num">05</span>נעים להכיר</div>
+          <h2>למה מגע</h2>
+          <p>מאז שהייתי ילד אהבתי לעשות מסאז' - לסבא ולאבא שלי, לאחים שלי ולחברים.</p>
+          <p>אחרי ה-7 באוקטובר הרגשתי שאני רוצה לעזור לאנשים, והחלטתי ללמוד טיפול במגע. אני מאמין שכאב באיבר מסוים לא מנותק משאר הגוף, וגם לא מהנפש. לכן בחרתי ללמוד עיסוי רפואי הוליסטי, שמטפל בגוף כולו ובנפש.</p>
+          <p>כשאני רואה אנשים יוצאים מהטיפול רגועים, רפויים, קלילים ושמחים - אני מרגיש משמעות וסיפוק גדולים.</p>
+          <div class="creds">
+            <div><b>כרכור</b>בוגר המכללה בעיסוי רפואי הוליסטי, 2024</div>
+            <div><b>קיסריה</b>ניסיון בספא יוקרה</div>
+            <div><b>שנתיים</b>של טיפולים בקליניקה</div>
+          </div>
+          <a class="btn line" href="#book">לקביעת טיפול <span class="arr">←</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Testimonials -->
+    <section id="testimonials" class="dark">
+      <div class="wrap">
+        <div class="label"><span class="num">06</span>במילים שלהם</div>
+        <!-- Video testimonials from config.js TESTIMONIALS are added here automatically -->
+        <div class="testis" id="testis">
+          <div class="t"><p>"היה מעולה, מפנק ומושקע! הגב מרגיש הרבה יותר טוב והתחושה מצוינת."</p><span>מתוך הודעת וואטסאפ, יום אחרי הטיפול</span></div>
+          <div class="t ph"><p>המלצה נוספת</p><span>בקרוב</span></div>
+          <div class="t ph ph-video"><p>סרטון המלצה</p><span>בקרוב</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 Prices -->
+    <section id="prices">
+      <div class="wrap">
+        <div class="label"><span class="num">07</span>מחירים</div>
+        <h2>פשוט וברור</h2>
+        <div class="routine">
+          <div><b>הקלה</b>טיפול אחד - ומרגישים את ההבדל.</div>
+          <div><b>רצף</b>כמה טיפולים ברצף - וההקלה נבנית.</div>
+          <div><b>שגרה</b>טיפול קבוע - והגוף נשאר צעד לפני המתח.</div>
+        </div>
+        <div class="prices">
+          <div class="price">
+            <h3>טיפול אחד</h3>
+            <div class="amt">300 ₪</div>
+            <ul><li>שעה ורבע</li><li>כולל שיחה קצרה בהתחלה</li><li>שישי, מוצ"ש או ראשון בערב</li></ul>
+            <a class="btn line" href="#book">לקביעת טיפול</a>
+          </div>
+          <div class="price">
+            <h3>סדרה של 3</h3>
+            <div class="amt">810 ₪<small>270 ₪ לטיפול</small></div>
+            <ul><li>חוסכים 90 ₪</li><li>להתחיל רצף ולהרגיש את ההבדל</li><li>בתוקף ל-3 חודשים</li></ul>
+            <a class="btn line" href="#book">לקביעת טיפול</a>
+          </div>
+          <div class="price">
+            <span class="ribbon">הכי משתלם</span>
+            <h3>סדרה של 7</h3>
+            <div class="amt">1,800 ₪<small>במקום 2,100 ₪</small></div>
+            <ul><li>הטיפול השביעי עליי</li><li>לכאב שחוזר, או כשגרה קבועה</li><li>בתוקף ל-6 חודשים</li></ul>
+            <a class="btn" href="#book">לקביעת טיפול <span class="arr">←</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 FAQ -->
+    <section id="faq" class="tight">
+      <div class="wrap faq">
+        <div class="label"><span class="num">08</span>שאלות נפוצות</div>
+        <h2>לפני שמגיעים</h2>
+        <details><summary>זה כואב?</summary><p>הלחץ מותאם אליכם ואפשר לשנות אותו בכל רגע. בעבודה על נקודות תפוסות יכולה להיות תחושה חזקה, אבל תמיד בגבול הנוח.</p></details>
+        <details><summary>אני מעדיפה מטפלת. איך זה עם מטפל גבר?</summary><p>זו שאלה לגיטימית, ושואלים אותה הרבה. ככה זה עובד אצלי:</p>
+          <ul>
+            <li>הטיפול מקצועי וטיפולי בלבד. בשיחה הקצרה בהתחלה נסכם יחד על אילו אזורים עובדים - ורק עליהם.</li>
+            <li>את מחליטה מה להוריד. התחתונים נשארים, ואפשר גם להישאר בבגדים קלים.</li>
+            <li>הגוף מכוסה במגבת לאורך כל הטיפול, ורק האזור שמטופל באותו רגע חשוף. החזה והאזורים האינטימיים תמיד מכוסים.</li>
+            <li>אני בודק איתך את הלחץ והנוחות לאורך הטיפול, ואפשר לעצור או לשנות בכל רגע, בלי להסביר.</li>
+            <li>אם יותר נוח לך, אפשר להגיע עם מלווה.</li>
+            <li>רוצה לשאול משהו לפני שקובעים? <a class="js-wa" href="https://wa.me/972532083010" target="_blank" rel="noopener" data-ev="Contact">כתבי לי בוואטסאפ</a>.</li>
+          </ul></details>
+        <details><summary>כמה טיפולים צריך?</summary><p>הרבה אנשים מרגישים הקלה כבר אחרי הטיפול הראשון. לכאב ותיק שחוזר, בדרך כלל כדאי כמה טיפולים ברצף - ובשביל זה יש סדרות של 3 ושל 7.</p></details>
+        <details><summary>יש לי בעיה רפואית או הריון. אפשר?</summary><p>ספרו לי לפני הטיפול. במקרים מסוימים נתאים את הטיפול, ולפעמים נבקש קודם אישור רופא.</p></details>
+        <details><summary>מה להביא?</summary><p>שום דבר. מגבות ושמנים יש בקליניקה. כדאי להגיע כמה דקות לפני, בלי למהר.</p></details>
+        <details><summary>איפה הקליניקה?</summary><p>דרך הערבה 48, גבע כרמל - קרוב לעתלית, עין הוד, טירת כרמל ודרום חיפה.</p></details>
+      </div>
+    </section>
+
+    <!-- 09 Booking: reassurance list + form → Google Calendar appointment schedule -->
+    <section id="book" class="session">
+      <div class="wrap bookwrap" id="bookwrap">
+        <div>
+          <div class="label"><span class="num">09</span>קביעת תור</div>
+          <h2>הגב שלכם<br>יגיד תודה</h2>
+          <p class="turn" style="margin:0 0 14px;font-size:1.45rem">כתפיים רכות יותר. נשימה עמוקה יותר. גוף שמרגיש שדאגו לו.</p>
+          <p class="muted">משאירים פרטים ובוחרים מועד. זה לוקח דקה.</p>
+          <ul class="assure">
+            <li>300 ₪ לטיפול, בלי התחייבות.</li>
+            <li>פרטיות מלאה, ומגבת לאורך כל הטיפול.</li>
+            <li>אפשר להגיע עם מלווה.</li>
+            <li>תזכורת בוואטסאפ יום לפני.</li>
+          </ul>
+          <!-- Call / WhatsApp / navigation buttons (built from config.js) -->
+          <div class="talk-first">
+            <p class="muted">רוצים לדבר קודם?</p>
+            <p class="contact-line"><span data-contact="small"></span></p>
+          </div>
+        </div>
+        <div class="book" id="book-card">
+          <div class="progress"><i class="on" id="p1"></i><i id="p2"></i><i id="p3"></i></div>
+          <div id="form-step">
+            <h3>פרטים</h3>
+            <p class="muted" style="margin:0;font-size:.95rem"><span class="next-slot-text">המועד הפנוי הבא: <b class="js-next">-</b></span></p>
+            <form id="lead-form" novalidate>
+              <!-- Set by the "לקביעה" links in the focus section; saved with the lead details -->
+              <input type="hidden" id="focus-input" name="focus">
+              <p class="focus-pick" id="focus-pick" hidden>מיקוד: <b id="focus-name"></b> · <a href="#focus">שינוי</a></p>
+              <label for="name">שם מלא</label>
+              <input id="name" name="name" autocomplete="name" required>
+              <label for="phone">טלפון</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+              <label for="email">אימייל</label>
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              <div class="error" id="form-error" role="alert"></div>
+              <button class="btn" type="submit">להמשך לבחירת מועד <span class="arr">←</span></button>
+              <p class="consent">בהמשך אתם מאשרים שניצור קשר בנוגע לתור. פרטים ב<a href="privacy.html">מדיניות הפרטיות</a>.</p>
+            </form>
+          </div>
+          <div id="booking-step">
+            <h3 id="booking-hello">בחירת מועד</h3>
+            <button class="back-link" type="button" id="back-btn">→ לעריכת הפרטים</button>
+            <p class="booking-note">בחרו מועד - ובטופס של גוגל מלאו שוב שם וטלפון</p>
+            <div id="booking-embed"></div>
+            <p class="booking-links"><a id="booking-open" href="https://calendar.app.google/AjBpTiq83HcScdmi9" target="_blank" rel="noopener">פתיחה בחלון חדש</a> · <a href="thank-you.html">קבעתי תור ←</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dark">
+    <div class="wrap">
+      <a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">עמית קליסקר</span></a>
+      <p>עיסוי רפואי הוליסטי · בין עומק לרוך</p>
+      <p><span data-contact="small"></span></p>
+      <p><a href="privacy.html">מדיניות פרטיות</a> · <a href="en/" lang="en">English</a></p>
+    </div>
+  </footer>
+
+  <!-- Sticky bottom bar on phones -->
+  <div class="sticky" id="sticky"><a class="btn" href="#book">לקביעת טיפול</a><a class="wa" id="sticky-wa" href="#" target="_blank" rel="noopener" data-ev="Contact">וואטסאפ</a></div>
+
+  <script src="page.js"></script>
+</body>
+</html>
