@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Bellefair&family=Frank+Ruhl+Libre:wght@300;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=1113c">
+  <link rel="stylesheet" href="../styles.css?v=1114a">
 
   <!-- All settings (booking link, Pixel ID, phone, address, hours, media) live in ../config.js -->
   <script src="../config.js"></script>
@@ -39,7 +39,7 @@
   <div class="bar">
     <div class="wrap">
       <a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">Amit Kaliskar</span></a>
-      <nav><a href="#between">Approach</a><a href="#focus">Focuses</a><a href="#session">The session</a><a href="#about">About</a><a href="#prices">Prices</a><a class="btn sm" href="#book">Book a session</a></nav>
+      <nav><a href="#session">The session</a><a href="#focus">Focuses</a><a href="#between">Approach</a><a href="#about">About</a><a href="#prices">Prices</a><a class="btn sm" href="#book">Book a session</a></nav>
     </div>
   </div>
 
@@ -76,7 +76,7 @@
     </div>
 
     <!-- 01 Pain -->
-    <section id="pain">
+    <section id="pain" class="compact">
       <div class="wrap">
         <div class="label"><span class="num">01</span>THIS IS FOR YOU IF</div>
         <h2>Your body carries more<br>than you think</h2>
@@ -90,17 +90,21 @@
       </div>
     </section>
 
-    <!-- 02 Between medicine and spa -->
-    <section id="between" class="tight">
-      <div class="wrap">
-        <svg class="horizon-mark" aria-hidden="true"><use href="#hz"/></svg>
-        <div class="label"><span class="num">02</span>THE APPROACH</div>
-        <h2>Between medicine and spa</h2>
-        <p class="muted" style="max-width:640px">I bring what I learned in medical massage - how muscles, tissue and stuck spots work - and do it quietly, gently and without rushing. The clinic is in my home in Geva Carmel, a small, quiet moshav at the foot of the Carmel.</p>
-        <div class="between">
-          <div><div class="tag">THE HANDS</div><h3>of medical massage</h3><p class="muted">Work on deep tissue and trigger points. I want to understand where the pain comes from, not just press on the spot that bothers you right now.</p></div>
-          <div><div class="tag">THE PAMPERING</div><h3>of a luxury spa</h3><p class="muted">After working at a luxury spa in Caesarea, I brought the same attention to the clinic: soft light, essential oils and full presence.</p></div>
-          <div><div class="tag">THE TIME</div><h3>that's all yours</h3><p class="muted">75 minutes, not 45. And at the hours when you actually have time: Friday, Saturday night and Sunday evening.</p></div>
+    <!-- 02 Session: arched video + steps -->
+    <section id="session" class="session">
+      <div class="wrap see">
+        <div class="vid" id="video-wrap">
+          <video id="session-video" muted loop playsinline preload="metadata"></video>
+          <button type="button" class="video-toggle" id="video-toggle" aria-label="Pause video" hidden></button>
+        </div>
+        <div>
+          <div class="label"><span class="num">02</span>THE SESSION</div>
+          <h2>Seventy-five minutes,<br>three steps</h2>
+          <div class="steps">
+            <div class="step"><div class="thumb" data-session-photo="0"></div><div><h3><span>A.</span>A short talk</h3><p class="muted">What hurts, since when, and what your days look like - so the session fits you.</p></div></div>
+            <div class="step"><div class="thumb" data-session-photo="1"></div><div><h3><span>B.</span>The treatment</h3><p class="muted">I work on the tight muscles with the strength that suits you, and you can always adjust the pressure as we go.</p></div></div>
+            <div class="step"><div class="thumb" data-session-photo="2"></div><div><h3><span>C.</span>Keeping the results</h3><p class="muted">A few simple tips for home - movement, breathing and habits - so the relief lasts.</p></div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -119,21 +123,17 @@
       </div>
     </section>
 
-    <!-- 04 Session: arched video + steps -->
-    <section id="session" class="session">
-      <div class="wrap see">
-        <div class="vid" id="video-wrap">
-          <video id="session-video" muted loop playsinline preload="metadata"></video>
-          <button type="button" class="video-toggle" id="video-toggle" aria-label="Pause video" hidden></button>
-        </div>
-        <div>
-          <div class="label"><span class="num">04</span>THE SESSION</div>
-          <h2>Seventy-five minutes,<br>three steps</h2>
-          <div class="steps">
-            <div class="step"><div class="thumb" data-session-photo="0"></div><div><h3><span>A.</span>A short talk</h3><p class="muted">What hurts, since when, and what your days look like - so the session fits you.</p></div></div>
-            <div class="step"><div class="thumb" data-session-photo="1"></div><div><h3><span>B.</span>The treatment</h3><p class="muted">I work on the tight muscles with the strength that suits you, and you can always adjust the pressure as we go.</p></div></div>
-            <div class="step"><div class="thumb" data-session-photo="2"></div><div><h3><span>C.</span>Keeping the results</h3><p class="muted">A few simple tips for home - movement, breathing and habits - so the relief lasts.</p></div></div>
-          </div>
+    <!-- 04 Between medicine and spa -->
+    <section id="between" class="tight">
+      <div class="wrap">
+        <svg class="horizon-mark" aria-hidden="true"><use href="#hz"/></svg>
+        <div class="label"><span class="num">04</span>THE APPROACH</div>
+        <h2>Between medicine and spa</h2>
+        <p class="muted" style="max-width:640px">I bring what I learned in medical massage - how muscles, tissue and stuck spots work - and do it quietly, gently and without rushing. The clinic is in my home in Geva Carmel, a small, quiet moshav at the foot of the Carmel.</p>
+        <div class="between">
+          <div><div class="tag">THE HANDS</div><h3>of medical massage</h3><p class="muted">Work on deep tissue and trigger points. I want to understand where the pain comes from, not just press on the spot that bothers you right now.</p></div>
+          <div><div class="tag">THE PAMPERING</div><h3>of a luxury spa</h3><p class="muted">After working at a luxury spa in Caesarea, I brought the same attention to the clinic: soft light, essential oils and full presence.</p></div>
+          <div><div class="tag">THE TIME</div><h3>that's all yours</h3><p class="muted">75 minutes, not 45. And at the hours when you actually have time: Friday, Saturday night and Sunday evening.</p></div>
         </div>
       </div>
     </section>

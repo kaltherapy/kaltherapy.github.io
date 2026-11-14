@@ -375,3 +375,17 @@ html.a11y-font, html.a11y-font * { font-family: Arial, "Assistant", sans-serif !
 html.a11y-still *, html.a11y-still *::before, html.a11y-still *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print { .a11y-btn, .a11y-panel, .skip-link { display: none !important; } }
+
+/* Section order 2026-11-14: smaller section 01, then session, focus, approach */
+#pain.compact { padding: 56px 0 40px; }
+#pain.compact h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+#pain.compact .pain { margin-top: 18px; }
+#pain.compact .pain p { padding: 13px 0; font-size: 1rem; }
+#pain.compact .turn { font-size: clamp(1.15rem, 2.2vw, 1.45rem); margin-top: 24px; }
+#between.tight { padding-top: 96px; }
+#focus.tight { padding-top: 88px; }
+@media (max-width: 760px) { #pain.compact { padding: 44px 0 32px; } #between.tight, #focus.tight { padding-top: 64px; } }
+
+/* English tagline: long last word fits on phones */
+html[lang="en"] .tagline .t-soft { font-size: 0.82em; margin-inline-start: 0.8em; }
+@media (max-width: 760px) { html[lang="en"] .tagline .t-soft { font-size: 0.7em; margin-inline-start: 0.4em; } }

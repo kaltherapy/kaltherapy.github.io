@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Bellefair&family=Frank+Ruhl+Libre:wght@300;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=1113c">
+  <link rel="stylesheet" href="styles.css?v=1114a">
 
   <!-- All settings (booking link, Pixel ID, phone, address, hours, media) live in config.js -->
   <script src="config.js"></script>
@@ -41,7 +41,7 @@
   <div class="bar">
     <div class="wrap">
       <a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">עמית קליסקר</span></a>
-      <nav><a href="#between">הגישה</a><a href="#focus">מיקודים</a><a href="#session">הטיפול</a><a href="#about">עליי</a><a href="#prices">מחירים</a><a class="btn sm" href="#book">לקביעת טיפול</a></nav>
+      <nav><a href="#session">הטיפול</a><a href="#focus">מיקודים</a><a href="#between">הגישה</a><a href="#about">עליי</a><a href="#prices">מחירים</a><a class="btn sm" href="#book">לקביעת טיפול</a></nav>
     </div>
   </div>
 
@@ -78,7 +78,7 @@
     </div>
 
     <!-- 01 Pain -->
-    <section id="pain">
+    <section id="pain" class="compact">
       <div class="wrap">
         <div class="label"><span class="num">01</span>זה בשבילכם אם</div>
         <h2>הגוף סוחב יותר<br>ממה שנדמה</h2>
@@ -92,17 +92,21 @@
       </div>
     </section>
 
-    <!-- 02 Between medicine and spa -->
-    <section id="between" class="tight">
-      <div class="wrap">
-        <svg class="horizon-mark" aria-hidden="true"><use href="#hz"/></svg>
-        <div class="label"><span class="num">02</span>הגישה</div>
-        <h2>בין רפואה לספא</h2>
-        <p class="muted" style="max-width:640px">אני מביא לטיפול את מה שלמדתי בעיסוי רפואי - הבנה של שרירים, רקמות ונקודות שנתפסות - ועושה את זה בשקט, בנעימות ובלי למהר. הקליניקה נמצאת בבית שלי בגבע כרמל, מושב קטן ושקט למרגלות הכרמל.</p>
-        <div class="between">
-          <div><div class="tag">הידיים</div><h3>של עיסוי רפואי</h3><p class="muted">עבודה על רקמות עמוקות ונקודות טריגר. חשוב לי להבין מה המקור לכאב, ולא רק ללחוץ על הנקודה שמציקה עכשיו.</p></div>
-          <div><div class="tag">הפינוק</div><h3>של ספא יוקרה</h3><p class="muted">אחרי עבודה בספא יוקרה בקיסריה, הבאתי את אותה תשומת לב לקליניקה: אור רך, שמנים אתריים ונוכחות מלאה.</p></div>
-          <div><div class="tag">הזמן</div><h3>שהוא רק שלכם</h3><p class="muted">שעה ורבע, לא 45 דקות. ובשעות שבהן באמת יש לכם זמן: שישי, מוצ"ש וראשון בערב.</p></div>
+    <!-- 02 Session: arched video + steps -->
+    <section id="session" class="session">
+      <div class="wrap see">
+        <div class="vid" id="video-wrap">
+          <video id="session-video" muted loop playsinline preload="metadata"></video>
+          <button type="button" class="video-toggle" id="video-toggle" aria-label="השהיית הסרטון" hidden></button>
+        </div>
+        <div>
+          <div class="label"><span class="num">02</span>הטיפול</div>
+          <h2>שעה ורבע,<br>שלושה שלבים</h2>
+          <div class="steps">
+            <div class="step"><div class="thumb" data-session-photo="0"></div><div><h3><span>א.</span>שיחה קצרה</h3><p class="muted">מה כואב, ממתי, ואיך נראה היום-יום שלכם - כדי שהטיפול יתאים לכם.</p></div></div>
+            <div class="step"><div class="thumb" data-session-photo="1"></div><div><h3><span>ב.</span>הטיפול</h3><p class="muted">אני עובד על השרירים התפוסים בעוצמה שמתאימה לכם, ותמיד אפשר לכוון את הלחץ תוך כדי.</p></div></div>
+            <div class="step"><div class="thumb" data-session-photo="2"></div><div><h3><span>ג.</span>לשמור על התוצאה</h3><p class="muted">כמה טיפים פשוטים לבית - תנועה, נשימה והרגלים - כדי שההקלה תימשך.</p></div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -121,21 +125,17 @@
       </div>
     </section>
 
-    <!-- 04 Session: arched video + steps -->
-    <section id="session" class="session">
-      <div class="wrap see">
-        <div class="vid" id="video-wrap">
-          <video id="session-video" muted loop playsinline preload="metadata"></video>
-          <button type="button" class="video-toggle" id="video-toggle" aria-label="השהיית הסרטון" hidden></button>
-        </div>
-        <div>
-          <div class="label"><span class="num">04</span>הטיפול</div>
-          <h2>שעה ורבע,<br>שלושה שלבים</h2>
-          <div class="steps">
-            <div class="step"><div class="thumb" data-session-photo="0"></div><div><h3><span>א.</span>שיחה קצרה</h3><p class="muted">מה כואב, ממתי, ואיך נראה היום-יום שלכם - כדי שהטיפול יתאים לכם.</p></div></div>
-            <div class="step"><div class="thumb" data-session-photo="1"></div><div><h3><span>ב.</span>הטיפול</h3><p class="muted">אני עובד על השרירים התפוסים בעוצמה שמתאימה לכם, ותמיד אפשר לכוון את הלחץ תוך כדי.</p></div></div>
-            <div class="step"><div class="thumb" data-session-photo="2"></div><div><h3><span>ג.</span>לשמור על התוצאה</h3><p class="muted">כמה טיפים פשוטים לבית - תנועה, נשימה והרגלים - כדי שההקלה תימשך.</p></div></div>
-          </div>
+    <!-- 04 Between medicine and spa -->
+    <section id="between" class="tight">
+      <div class="wrap">
+        <svg class="horizon-mark" aria-hidden="true"><use href="#hz"/></svg>
+        <div class="label"><span class="num">04</span>הגישה</div>
+        <h2>בין רפואה לספא</h2>
+        <p class="muted" style="max-width:640px">אני מביא לטיפול את מה שלמדתי בעיסוי רפואי - הבנה של שרירים, רקמות ונקודות שנתפסות - ועושה את זה בשקט, בנעימות ובלי למהר. הקליניקה נמצאת בבית שלי בגבע כרמל, מושב קטן ושקט למרגלות הכרמל.</p>
+        <div class="between">
+          <div><div class="tag">הידיים</div><h3>של עיסוי רפואי</h3><p class="muted">עבודה על רקמות עמוקות ונקודות טריגר. חשוב לי להבין מה המקור לכאב, ולא רק ללחוץ על הנקודה שמציקה עכשיו.</p></div>
+          <div><div class="tag">הפינוק</div><h3>של ספא יוקרה</h3><p class="muted">אחרי עבודה בספא יוקרה בקיסריה, הבאתי את אותה תשומת לב לקליניקה: אור רך, שמנים אתריים ונוכחות מלאה.</p></div>
+          <div><div class="tag">הזמן</div><h3>שהוא רק שלכם</h3><p class="muted">שעה ורבע, לא 45 דקות. ובשעות שבהן באמת יש לכם זמן: שישי, מוצ"ש וראשון בערב.</p></div>
         </div>
       </div>
     </section>
