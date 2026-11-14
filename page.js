@@ -113,10 +113,21 @@
     document.querySelectorAll('#sticky-wa, .js-wa').forEach(function (a) { a.href = window.SITE_LINKS.whatsapp; });
   }
   if ($('sticky') && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      $('sticky').classList.toggle('hide', entries[0].isIntersecting);
-    }).observe($('book'));
+    var seen = new Map();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { seen.set(e.target, e.isIntersecting); });
+      var anyOn = false; seen.forEach(function (v) { if (v) anyOn = true; });
+      $('sticky').classList.toggle('hide', anyOn);
+    });
+    var heroCta = document.querySelector('.hero .cta');
+    if (heroCta) io.observe(heroCta);
+    io.observe($('book'));
   }
+
+  // "Prefer a female therapist?" link opens that FAQ answer
+  document.querySelectorAll('.js-open-male').forEach(function (a) {
+    a.addEventListener('click', function () { var d = $('faq-male'); if (d) d.open = true; });
+  });
 
   // ---------- Focus cards: "Book" on a card remembers the chosen focus ----------
   document.querySelectorAll('[data-focus]').forEach(function (a) {
@@ -130,76 +141,30 @@
     });
   });
 
-  // ---------- Step 1: lead form ----------
-  var lead = {};
-  $('lead-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = $('name').value.trim();
-    var phone = $('phone').value.trim();
-    var email = $('email').value.trim();
-    var err = '';
-    if (name.length < 2) err = T.errName;
-    else if (phone.replace(/\D/g, '').length < 9) err = T.errPhone;
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) err = T.errEmail;
-    $('form-error').textContent = err;
-    if (err) return;
-
-    var focus = $('focus-input') ? $('focus-input').value : '';
-    lead = { name: name, phone: phone, email: email, focus: focus, lang: window.SITE_LANG, page: location.href, time: new Date().toISOString() };
-    // Which ad brought them (utm_source / utm_campaign / utm_content from the ad link)
-    var q = new URLSearchParams(location.search);
-    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) { if (q.get(k)) lead[k] = q.get(k); });
-    try { sessionStorage.setItem('lead', JSON.stringify(lead)); } catch (x) {}
-
-    // Tell Facebook a lead happened (only if the Pixel is set up).
-    window.track('Lead');
-
-    // Send the details to the Google Sheet (SETUP.md step 2). The Google booking
-    // page can't receive them, so this is where name / phone / email are kept.
-    if (C.LEAD_WEBHOOK_URL) {
-      try {
-        // Sent as a normal form post so Google Apps Script / Make / Zapier read the fields directly.
-        fetch(C.LEAD_WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(lead) });
-      } catch (x) {}
-    }
-
-    showBooking();
-  });
-
-  $('back-btn').addEventListener('click', function () {
-    $('booking-step').classList.remove('on');
-    $('form-step').style.display = '';
-    $('book-card').classList.remove('wide');
-    if ($('bookwrap')) $('bookwrap').classList.remove('booking');
-    $('p2').classList.remove('on');
-    $('book').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // ---------- Step 2: Google Calendar appointment schedule ----------
-  // Google can't pre-fill the form, so the note above the calendar asks people
-  // to type their name and phone again.
+  // ---------- Booking: the Google appointment calendar, loaded when the section gets close ----------
+  // There is no site form: Google's booking form asks for name and phone once, and books straight into the calendar.
   if ($('booking-open') && C.BOOKING_LINK) $('booking-open').href = C.BOOKING_LINK;
-
-  function showBooking() {
-    $('form-step').style.display = 'none';
-    $('booking-step').classList.add('on');
-    $('book-card').classList.add('wide');
-    if ($('bookwrap')) $('bookwrap').classList.add('booking'); // give the calendar the full width
-    $('p2').classList.add('on');
-    $('booking-hello').textContent = T.hello(lead.name.split(' ')[0]);
-    $('book').scrollIntoView({ behavior: 'smooth' });
-
-    if (!$('booking-embed').querySelector('iframe') && C.BOOKING_URL) {
-      var f = document.createElement('iframe');
-      f.src = C.BOOKING_URL;
-      f.title = T.calendarTitle;
-      f.setAttribute('frameborder', '0');
-      f.style.border = '0';
-      f.width = '100%';
-      f.height = '600';
-      $('booking-embed').appendChild(f);
-    }
+  function loadCalendar() {
+    if (!$('booking-embed') || $('booking-embed').querySelector('iframe') || !C.BOOKING_URL) return;
+    var f = document.createElement('iframe');
+    f.src = C.BOOKING_URL;
+    f.title = T.calendarTitle;
+    f.setAttribute('frameborder', '0');
+    f.style.border = '0';
+    f.width = '100%';
+    f.height = '600';
+    f.loading = 'lazy';
+    $('booking-embed').appendChild(f);
   }
+  if ('IntersectionObserver' in window && $('book')) {
+    var bio = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { loadCalendar(); bio.disconnect(); } }, { rootMargin: '900px 0px' });
+    bio.observe($('book'));
+  } else { loadCalendar(); }
+  // Clicking any "book" button counts as starting a booking (for the ads)
+  var started = false;
+  document.querySelectorAll('a[href="#book"]').forEach(function (a) {
+    a.addEventListener('click', function () { if (!started) { started = true; window.track('InitiateCheckout'); } loadCalendar(); });
+  });
 
   // ---------- After booking ----------
   // Google doesn't tell this page when a booking is made, so the "I've booked"

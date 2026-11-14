@@ -11,22 +11,22 @@
   <!-- Social preview (when the link is shared on WhatsApp/Facebook) -->
   <meta property="og:title" content="Between depth and gentleness. | Amit Kaliskar, Geva Carmel">
   <meta property="og:description" content="Deep medical massage with a spa feel. 75 minutes, ₪300. Also Fridays and Saturday nights.">
-  <meta property="og:image" content="https://kaltherapy.co.il/photos/web-massage/massage-160.jpg">
-  <link rel="canonical" href="https://kaltherapy.co.il/en/">
-  <link rel="alternate" hreflang="he" href="https://kaltherapy.co.il/">
-  <link rel="alternate" hreflang="en" href="https://kaltherapy.co.il/en/">
-  <link rel="alternate" hreflang="x-default" href="https://kaltherapy.co.il/">
-  <meta property="og:url" content="https://kaltherapy.co.il/en/">
+  <meta property="og:image" content="https://kaltherapy.github.io/photos/web-massage/massage-160.jpg">
+  <link rel="canonical" href="https://kaltherapy.github.io/en/">
+  <link rel="alternate" hreflang="he" href="https://kaltherapy.github.io/">
+  <link rel="alternate" hreflang="en" href="https://kaltherapy.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://kaltherapy.github.io/">
+  <meta property="og:url" content="https://kaltherapy.github.io/en/">
   <meta name="theme-color" content="#2b231d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Bellefair&family=Frank+Ruhl+Libre:wght@300;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=1114a">
+  <link rel="stylesheet" href="../styles.css?v=1114s">
 
   <!-- All settings (booking link, Pixel ID, phone, address, hours, media) live in ../config.js -->
-  <script src="../config.js"></script>
-  <script src="../site.js"></script>
-  <script src="../a11y.js?v=1113c" defer></script>
+  <script src="../config.js?v=1114r"></script>
+  <script src="../site.js?v=1114r"></script>
+  <script src="../a11y.js?v=1114r" defer></script>
 </head>
 <body class="has-sticky">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -38,7 +38,7 @@
 
   <div class="bar">
     <div class="wrap">
-      <a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">Amit Kaliskar</span></a>
+      <button type="button" class="a11y-open a11y-top" aria-label="Accessibility menu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="12" cy="4" r="2" fill="currentColor"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5m0 0l-3.5 6.5M12 15l3.5 6.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button><a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">Amit Kaliskar</span></a>
       <nav><a href="#session">The session</a><a href="#focus">Focuses</a><a href="#between">Approach</a><a href="#about">About</a><a href="#prices">Prices</a><a class="btn sm" href="#book">Book a session</a></nav>
     </div>
   </div>
@@ -69,9 +69,8 @@
       <div class="wrap">
         <div>
           <q>It was excellent, pampering and so thorough! My back feels much better and I feel great.</q>
-          <small>The day after the session (translated from Hebrew)</small>
         </div>
-        <span class="wa-chip">● From a real WhatsApp message</span>
+        <span class="wa-chip">● From a WhatsApp message, the day after a session</span>
       </div>
     </div>
 
@@ -147,7 +146,7 @@
         </figure>
         <div>
           <div class="label"><span class="num">05</span>NICE TO MEET YOU</div>
-          <h2>Why touch</h2>
+          <h2>My story</h2>
           <p>Ever since I was a kid I loved giving massages - to my grandfather and my dad, my siblings and my friends.</p>
           <p>After October 7th I felt I wanted to help people, and I decided to study therapeutic touch. I believe pain in one part of the body isn't separate from the rest of the body, or from the mind. So I went to study holistic medical massage at Karkur College, and graduated in 2024.</p>
           <p>After that I worked at a luxury spa in Caesarea. That's where I saw how much the quiet, the care and the small details matter - as much as the technique. I've been giving treatments for two years now, and today in my own clinic in Geva Carmel.</p>
@@ -157,23 +156,11 @@
       </div>
     </section>
 
-    <!-- 06 Testimonials -->
-    <section id="testimonials" class="dark">
-      <div class="wrap">
-        <div class="label"><span class="num">06</span>IN THEIR WORDS</div>
-        <!-- Video testimonials from config.js TESTIMONIALS are added here automatically -->
-        <div class="testis" id="testis">
-          <div class="t"><p>"It was excellent, pampering and so thorough! My back feels much better and I feel great."</p><span>From a WhatsApp message, the day after the session</span></div>
-          <div class="t ph"><p>Another testimonial</p><span>Coming soon</span></div>
-          <div class="t ph ph-video"><p>Video testimonial</p><span>Coming soon</span></div>
-        </div>
-      </div>
-    </section>
 
     <!-- 07 Prices -->
     <section id="prices">
       <div class="wrap">
-        <div class="label"><span class="num">07</span>PRICES</div>
+        <div class="label"><span class="num">06</span>PRICES</div>
         <h2>Simple and clear</h2>
         <div class="routine">
           <div><b>Relief</b>Even after one session, your body feels looser.</div>
@@ -181,11 +168,12 @@
           <div><b>Routine</b>A session once a month helps you not get to the point where everything is tight.</div>
         </div>
         <div class="prices">
-          <div class="price">
+          <div class="price first">
+            <span class="ribbon">SUGGESTED FIRST SESSION</span>
             <h3>One session</h3>
             <div class="amt">₪300</div>
             <ul><li>75 minutes</li><li>Includes a short talk at the start</li><li>Friday, Saturday night or Sunday evening</li></ul>
-            <a class="btn line" href="#book">Book a session</a>
+            <a class="btn" href="#book">Book a session <span class="arr">→</span></a>
           </div>
           <div class="price">
             <h3>A series of 3</h3>
@@ -198,7 +186,7 @@
             <h3>A series of 7</h3>
             <div class="amt">₪1,800<small>instead of ₪2,100</small></div>
             <ul><li>The seventh one is on me</li><li>For pain that keeps coming back, or as a regular routine</li><li>Valid for 6 months</li></ul>
-            <a class="btn" href="#book">Book a session <span class="arr">→</span></a>
+            <a class="btn line" href="#book">Book a session</a>
           </div>
         </div>
       </div>
@@ -207,10 +195,10 @@
     <!-- 08 FAQ -->
     <section id="faq" class="tight">
       <div class="wrap faq">
-        <div class="label"><span class="num">08</span>QUESTIONS</div>
+        <div class="label"><span class="num">07</span>QUESTIONS</div>
         <h2>Before you come</h2>
         <details><summary>Does it hurt?</summary><p>The pressure is adjusted to you and can be changed at any moment. Working on tight spots can feel intense, but always within what's comfortable.</p></details>
-        <details><summary>I'd prefer a female therapist. What's it like with a male therapist?</summary><p>People ask me this a lot, and I completely understand. It matters to me that you feel comfortable from the moment you walk in until you leave.</p>
+        <details id="faq-male"><summary>I'd prefer a female therapist. What's it like with a male therapist?</summary><p>People ask me this a lot, and I completely understand. It matters to me that you feel comfortable from the moment you walk in until you leave.</p>
           <p>We start with a few minutes of talking and decide together which areas to work on - and only those. You decide what to take off: underwear stays on, and you can also stay in light clothing. You're covered with a towel the whole time, and only the area I'm working on at that moment is uncovered. The chest and intimate areas are always covered.</p>
           <p>During the session I ask how the pressure is and how you feel. If anything isn't comfortable, we can stop or change it at any moment, no explanation needed. And if you'd rather come with someone, that's completely fine.</p>
           <p>Want to ask something before booking? <a class="js-wa" href="https://wa.me/972532083010" target="_blank" rel="noopener" data-ev="Contact">Message me on WhatsApp</a>.</p></details>
@@ -224,17 +212,18 @@
 
     <!-- 09 Booking: reassurance list + form → Google Calendar appointment schedule -->
     <section id="book" class="session">
-      <div class="wrap bookwrap" id="bookwrap">
+      <div class="wrap bookwrap booking" id="bookwrap">
         <div>
-          <div class="label"><span class="num">09</span>BOOKING</div>
+          <div class="label"><span class="num">08</span>BOOKING</div>
           <h2>Your back<br>will thank you</h2>
           <p class="turn" style="margin:0 0 14px;font-size:1.45rem">Softer shoulders. Deeper breathing. A body that feels cared for.</p>
-          <p class="muted">Leave your details and pick a time. It takes a minute.</p>
+          <p class="muted">Pick a free time in the calendar and leave your name and phone. It takes a minute.</p>
           <ul class="assure">
             <li>₪300 per session, no commitment.</li>
             <li>Full privacy, and a towel throughout the session.</li>
             <li>You're welcome to bring someone with you.</li>
-            <li>A WhatsApp reminder the day before, and free cancellation up to 24 hours before (<a href="cancellation.html">cancellation policy</a>).</li>
+            <li>A WhatsApp reminder the day before. Free cancellation up to 24 hours before - <a href="cancellation.html">cancellation policy</a></li>
+            <li><a href="#faq-male" class="js-open-male">Prefer a female therapist? Here is how it works</a></li>
           </ul>
           <!-- Call / WhatsApp / navigation buttons (built from config.js) -->
           <div class="talk-first">
@@ -242,30 +231,11 @@
             <p class="contact-line"><span data-contact="small"></span></p>
           </div>
         </div>
-        <div class="book" id="book-card">
-          <div class="progress"><i class="on" id="p1"></i><i id="p2"></i><i id="p3"></i></div>
-          <div id="form-step">
-            <h3>Your details</h3>
-            <p class="muted" style="margin:0;font-size:.95rem"><span class="next-slot-text">Next available: <b class="js-next">-</b></span></p>
-            <form id="lead-form" novalidate>
-              <!-- Set by the "Book" links in the focus section; saved with the lead details -->
-              <input type="hidden" id="focus-input" name="focus">
-              <p class="focus-pick" id="focus-pick" hidden>Focus: <b id="focus-name"></b> · <a href="#focus">change</a></p>
-              <label for="name">Full name</label>
-              <input id="name" name="name" autocomplete="name" required>
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
-              <div class="error" id="form-error" role="alert"></div>
-              <button class="btn" type="submit">Next: choose a time <span class="arr">→</span></button>
-              <p class="consent">By continuing you agree to be contacted about your booking. See the <a href="privacy.html">privacy note</a>.</p>
-            </form>
-          </div>
-          <div id="booking-step">
+        <div class="book wide" id="book-card">
+          <div id="booking-step" class="on">
             <h3 id="booking-hello">Choose a time</h3>
-            <button class="back-link" type="button" id="back-btn">← Edit my details</button>
-            <p class="booking-note">Pick a time - then fill in your name and phone again in Google's form</p>
+            <p class="muted" style="margin:0 0 6px;font-size:.95rem"><span class="next-slot-text">Next available: <b class="js-next">-</b></span></p>
+            <p class="booking-note">Pick a time, fill in your name and phone - and you are booked. A confirmation comes by email.</p>
             <div id="booking-embed"></div>
             <p class="booking-links"><a id="booking-open" href="https://calendar.app.google/AjBpTiq83HcScdmi9" target="_blank" rel="noopener">Open in a new window</a> · <a href="thank-you.html">I've booked my slot →</a></p>
           </div>
@@ -284,8 +254,8 @@
   </footer>
 
   <!-- Sticky bottom bar on phones -->
-  <div class="sticky" id="sticky"><a class="btn" href="#book">Book a session</a><a class="wa" id="sticky-wa" href="#" target="_blank" rel="noopener" data-ev="Contact">WhatsApp</a></div>
+  <div class="sticky" id="sticky"><a class="btn" href="#book">Book a session</a><a class="wa" id="sticky-wa" href="#" target="_blank" rel="noopener" data-ev="Contact" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a><button type="button" class="a11y-open" aria-label="Accessibility menu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="12" cy="4" r="2" fill="currentColor"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5m0 0l-3.5 6.5M12 15l3.5 6.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 
-  <script src="../page.js"></script>
+  <script src="../page.js?v=1114r"></script>
 </body>
 </html>

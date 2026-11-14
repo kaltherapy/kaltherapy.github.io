@@ -32,6 +32,7 @@
 
   // Count the booking in Facebook (only if the Pixel is set up).
   window.track('Schedule');
+  window.track('Lead');   // the site form is gone: a finished booking is the lead
 
   // Only present if a booking tool adds them to the link.
   var start = p.get('event_start_time'), end = p.get('event_end_time');

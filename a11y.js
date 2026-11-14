@@ -69,12 +69,19 @@
     document.body.appendChild(btn);
     document.body.appendChild(panel);
 
+    var opener = btn;
     function toggle(open) {
       panel.hidden = !open;
       btn.setAttribute("aria-expanded", String(open));
-      if (open) panel.querySelector("button").focus(); else btn.focus();
+      if (open) panel.querySelector("button").focus(); else (opener.offsetParent ? opener : btn).focus();
+      if (!open) opener = btn;
     }
-    btn.addEventListener("click", function () { toggle(panel.hidden); });
+    btn.addEventListener("click", function () { opener = btn; toggle(panel.hidden); });
+    // Extra openers placed in the page (top bar and sticky bar on phones)
+    document.querySelectorAll(".a11y-open").forEach(function (b) {
+      b.setAttribute("aria-controls", "a11y-panel");
+      b.addEventListener("click", function () { opener = b; toggle(panel.hidden); });
+    });
     panel.querySelector(".a11y-x").addEventListener("click", function () { toggle(false); });
     panel.addEventListener("keydown", function (e) { if (e.key === "Escape") toggle(false); });
     panel.addEventListener("click", function (e) {

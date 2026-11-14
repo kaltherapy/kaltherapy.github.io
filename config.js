@@ -57,7 +57,7 @@ window.SITE_CONFIG = {
   // Photos: use the web-sized copies in photos/web-massage/ (see photos/PHOTO-PICKS.md).
   HERO_VIDEO: "",            // e.g. "videos/hero.mp4" (short, silent, 10-20s loop)
   HERO_IMAGE: "photos/web-massage/massage-160.jpg",          // wide screens (also the video's poster)
-  HERO_IMAGE_MOBILE: "photos/web-massage/massage-185.jpg",   // phones (vertical)
+  HERO_IMAGE_MOBILE: "photos/web-massage/massage-197-mobile.jpg",   // phones (vertical)
   ABOUT_PHOTO: "photos/web-massage/massage-031.jpg",
   SESSION_VIDEO: "videos/web/session-loop-720.mp4",          // vertical loop next to "How a session works" (poster only if the visitor prefers reduced motion)
   SESSION_VIDEO_POSTER: "videos/web/session-loop-poster.jpg",

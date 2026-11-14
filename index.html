@@ -11,24 +11,24 @@
   <!-- Social preview (when the link is shared on WhatsApp/Facebook) -->
   <meta property="og:title" content="בין עומק לרוך | עמית קליסקר, גבע כרמל">
   <meta property="og:description" content="עיסוי רפואי עמוק באווירה של ספא. שעה ורבע, 300 ₪. גם בשישי ובמוצ&quot;ש.">
-  <meta property="og:image" content="https://kaltherapy.co.il/photos/web-massage/massage-160.jpg">
+  <meta property="og:image" content="https://kaltherapy.github.io/photos/web-massage/massage-160.jpg">
   <meta property="og:locale" content="he_IL">
-  <link rel="canonical" href="https://kaltherapy.co.il/">
-  <link rel="alternate" hreflang="he" href="https://kaltherapy.co.il/">
-  <link rel="alternate" hreflang="en" href="https://kaltherapy.co.il/en/">
-  <link rel="alternate" hreflang="x-default" href="https://kaltherapy.co.il/">
-  <meta property="og:url" content="https://kaltherapy.co.il/">
+  <link rel="canonical" href="https://kaltherapy.github.io/">
+  <link rel="alternate" hreflang="he" href="https://kaltherapy.github.io/">
+  <link rel="alternate" hreflang="en" href="https://kaltherapy.github.io/en/">
+  <link rel="alternate" hreflang="x-default" href="https://kaltherapy.github.io/">
+  <meta property="og:url" content="https://kaltherapy.github.io/">
   <meta name="theme-color" content="#2b231d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Bellefair&family=Frank+Ruhl+Libre:wght@300;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=1114a">
+  <link rel="stylesheet" href="styles.css?v=1114s">
 
   <!-- All settings (booking link, Pixel ID, phone, address, hours, media) live in config.js -->
-  <script src="config.js"></script>
+  <script src="config.js?v=1114r"></script>
   <!-- site.js loads the Meta Pixel automatically once META_PIXEL_ID is set in config.js -->
-  <script src="site.js"></script>
-  <script src="a11y.js?v=1113c" defer></script>
+  <script src="site.js?v=1114r"></script>
+  <script src="a11y.js?v=1114r" defer></script>
 </head>
 <body class="has-sticky">
   <a class="skip-link" href="#main">דלגו לתוכן</a>
@@ -40,7 +40,7 @@
 
   <div class="bar">
     <div class="wrap">
-      <a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">עמית קליסקר</span></a>
+      <button type="button" class="a11y-open a11y-top" aria-label="תפריט נגישות"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="12" cy="4" r="2" fill="currentColor"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5m0 0l-3.5 6.5M12 15l3.5 6.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button><a class="brand" href="#"><svg aria-hidden="true"><use href="#hz"/></svg><span data-config="THERAPIST_NAME">עמית קליסקר</span></a>
       <nav><a href="#session">הטיפול</a><a href="#focus">מיקודים</a><a href="#between">הגישה</a><a href="#about">עליי</a><a href="#prices">מחירים</a><a class="btn sm" href="#book">לקביעת טיפול</a></nav>
     </div>
   </div>
@@ -71,9 +71,9 @@
       <div class="wrap">
         <div>
           <q>היה מעולה, מפנק ומושקע! הגב מרגיש הרבה יותר טוב והתחושה מצוינת.</q>
-          <small>יום אחרי הטיפול</small>
+          
         </div>
-        <span class="wa-chip">● מתוך הודעת וואטסאפ אמיתית</span>
+        <span class="wa-chip">● מתוך הודעת וואטסאפ, יום אחרי הטיפול</span>
       </div>
     </div>
 
@@ -149,7 +149,7 @@
         </figure>
         <div>
           <div class="label"><span class="num">05</span>נעים להכיר</div>
-          <h2>למה מגע</h2>
+          <h2>הסיפור שלי</h2>
           <p>מאז שהייתי ילד אהבתי לעשות מסאז' - לסבא ולאבא שלי, לאחים שלי ולחברים.</p>
           <p>אחרי ה-7 באוקטובר הרגשתי שאני רוצה לעזור לאנשים, והחלטתי ללמוד טיפול במגע. אני מאמין שכאב באיבר מסוים לא מנותק משאר הגוף, וגם לא מהנפש. לכן הלכתי ללמוד עיסוי רפואי הוליסטי במכללת כרכור, וסיימתי ב-2024.</p>
           <p>אחר כך עבדתי בספא יוקרה בקיסריה. שם הבנתי כמה השקט, היחס והפרטים הקטנים חשובים לא פחות מהטכניקה. כבר שנתיים אני מטפל, ועכשיו בקליניקה שלי בגבע כרמל.</p>
@@ -159,23 +159,11 @@
       </div>
     </section>
 
-    <!-- 06 Testimonials -->
-    <section id="testimonials" class="dark">
-      <div class="wrap">
-        <div class="label"><span class="num">06</span>במילים שלהם</div>
-        <!-- Video testimonials from config.js TESTIMONIALS are added here automatically -->
-        <div class="testis" id="testis">
-          <div class="t"><p>"היה מעולה, מפנק ומושקע! הגב מרגיש הרבה יותר טוב והתחושה מצוינת."</p><span>מתוך הודעת וואטסאפ, יום אחרי הטיפול</span></div>
-          <div class="t ph"><p>המלצה נוספת</p><span>בקרוב</span></div>
-          <div class="t ph ph-video"><p>סרטון המלצה</p><span>בקרוב</span></div>
-        </div>
-      </div>
-    </section>
 
     <!-- 07 Prices -->
     <section id="prices">
       <div class="wrap">
-        <div class="label"><span class="num">07</span>מחירים</div>
+        <div class="label"><span class="num">06</span>מחירים</div>
         <h2>פשוט וברור</h2>
         <div class="routine">
           <div><b>הקלה</b>כבר אחרי טיפול אחד הגוף מרגיש משוחרר יותר.</div>
@@ -183,11 +171,12 @@
           <div><b>שגרה</b>טיפול פעם בחודש עוזר לא להגיע למצב שהכול תפוס.</div>
         </div>
         <div class="prices">
-          <div class="price">
+          <div class="price first">
+            <span class="ribbon">מומלץ לטיפול ראשון</span>
             <h3>טיפול אחד</h3>
             <div class="amt">300 ₪</div>
             <ul><li>שעה ורבע</li><li>כולל שיחה קצרה בהתחלה</li><li>שישי, מוצ"ש או ראשון בערב</li></ul>
-            <a class="btn line" href="#book">לקביעת טיפול</a>
+            <a class="btn" href="#book">לקביעת טיפול <span class="arr">←</span></a>
           </div>
           <div class="price">
             <h3>סדרה של 3</h3>
@@ -200,7 +189,7 @@
             <h3>סדרה של 7</h3>
             <div class="amt">1,800 ₪<small>במקום 2,100 ₪</small></div>
             <ul><li>הטיפול השביעי עליי</li><li>לכאב שחוזר, או כשגרה קבועה</li><li>בתוקף ל-6 חודשים</li></ul>
-            <a class="btn" href="#book">לקביעת טיפול <span class="arr">←</span></a>
+            <a class="btn line" href="#book">לקביעת טיפול</a>
           </div>
         </div>
       </div>
@@ -209,10 +198,10 @@
     <!-- 08 FAQ -->
     <section id="faq" class="tight">
       <div class="wrap faq">
-        <div class="label"><span class="num">08</span>שאלות נפוצות</div>
+        <div class="label"><span class="num">07</span>שאלות נפוצות</div>
         <h2>לפני שמגיעים</h2>
         <details><summary>זה כואב?</summary><p>הלחץ מותאם אליכם ואפשר לשנות אותו בכל רגע. בעבודה על נקודות תפוסות יכולה להיות תחושה חזקה, אבל תמיד בגבול הנוח.</p></details>
-        <details><summary>אני מעדיפה מטפלת. איך זה עם מטפל גבר?</summary><p>שואלים אותי את זה הרבה, ואני מבין לגמרי. חשוב לי שתרגישי בנוח מהרגע שאת נכנסת ועד שאת יוצאת.</p>
+        <details id="faq-male"><summary>אני מעדיפה מטפלת. איך זה עם מטפל גבר?</summary><p>שואלים אותי את זה הרבה, ואני מבין לגמרי. חשוב לי שתרגישי בנוח מהרגע שאת נכנסת ועד שאת יוצאת.</p>
           <p>בהתחלה אנחנו מדברים כמה דקות ומחליטים ביחד על אילו אזורים עובדים - ורק עליהם. את מחליטה מה להוריד: התחתונים נשארים, ואפשר גם להישאר בבגדים קלים. כל הזמן את מכוסה במגבת, ורק האזור שאני עובד עליו באותו רגע פתוח. החזה והאזורים האינטימיים תמיד מכוסים.</p>
           <p>במהלך הטיפול אני שואל איך הלחץ ואיך את מרגישה. אם משהו לא נוח, אפשר לעצור או לשנות בכל רגע, בלי להסביר. ואם יותר נעים לך להגיע עם מישהו, זה בסדר גמור.</p>
           <p>רוצה לשאול משהו לפני שקובעים? <a class="js-wa" href="https://wa.me/972532083010" target="_blank" rel="noopener" data-ev="Contact">כתבי לי בוואטסאפ</a>.</p></details>
@@ -226,17 +215,18 @@
 
     <!-- 09 Booking: reassurance list + form → Google Calendar appointment schedule -->
     <section id="book" class="session">
-      <div class="wrap bookwrap" id="bookwrap">
+      <div class="wrap bookwrap booking" id="bookwrap">
         <div>
-          <div class="label"><span class="num">09</span>קביעת תור</div>
+          <div class="label"><span class="num">08</span>קביעת תור</div>
           <h2>הגב שלכם<br>יגיד תודה</h2>
           <p class="turn" style="margin:0 0 14px;font-size:1.45rem">כתפיים רכות יותר. נשימה עמוקה יותר. גוף שמרגיש שדאגו לו.</p>
-          <p class="muted">משאירים פרטים ובוחרים מועד. זה לוקח דקה.</p>
+          <p class="muted">בוחרים שעה פנויה ביומן ומשאירים שם וטלפון. זה לוקח דקה.</p>
           <ul class="assure">
             <li>300 ₪ לטיפול, בלי התחייבות.</li>
             <li>פרטיות מלאה, ומגבת לאורך כל הטיפול.</li>
             <li>אפשר להגיע עם מלווה.</li>
-            <li>תזכורת בוואטסאפ יום לפני, וביטול חינם עד 24 שעות לפני (<a href="cancellation.html">מדיניות ביטולים</a>).</li>
+            <li>תזכורת בוואטסאפ יום לפני. ביטול חינם עד 24 שעות לפני - <a href="cancellation.html">למדיניות הביטולים</a></li>
+            <li><a href="#faq-male" class="js-open-male">מעדיפה מטפלת? כך זה עובד אצלי</a></li>
           </ul>
           <!-- Call / WhatsApp / navigation buttons (built from config.js) -->
           <div class="talk-first">
@@ -244,30 +234,11 @@
             <p class="contact-line"><span data-contact="small"></span></p>
           </div>
         </div>
-        <div class="book" id="book-card">
-          <div class="progress"><i class="on" id="p1"></i><i id="p2"></i><i id="p3"></i></div>
-          <div id="form-step">
-            <h3>פרטים</h3>
-            <p class="muted" style="margin:0;font-size:.95rem"><span class="next-slot-text">המועד הפנוי הבא: <b class="js-next">-</b></span></p>
-            <form id="lead-form" novalidate>
-              <!-- Set by the "לקביעה" links in the focus section; saved with the lead details -->
-              <input type="hidden" id="focus-input" name="focus">
-              <p class="focus-pick" id="focus-pick" hidden>מיקוד: <b id="focus-name"></b> · <a href="#focus">שינוי</a></p>
-              <label for="name">שם מלא</label>
-              <input id="name" name="name" autocomplete="name" required>
-              <label for="phone">טלפון</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
-              <label for="email">אימייל</label>
-              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
-              <div class="error" id="form-error" role="alert"></div>
-              <button class="btn" type="submit">להמשך לבחירת מועד <span class="arr">←</span></button>
-              <p class="consent">בהמשך אתם מאשרים שניצור קשר בנוגע לתור. פרטים ב<a href="privacy.html">מדיניות הפרטיות</a>.</p>
-            </form>
-          </div>
-          <div id="booking-step">
+        <div class="book wide" id="book-card">
+          <div id="booking-step" class="on">
             <h3 id="booking-hello">בחירת מועד</h3>
-            <button class="back-link" type="button" id="back-btn">→ לעריכת הפרטים</button>
-            <p class="booking-note">בחרו מועד - ובטופס של גוגל מלאו שוב שם וטלפון</p>
+            <p class="muted" style="margin:0 0 6px;font-size:.95rem"><span class="next-slot-text">המועד הפנוי הבא: <b class="js-next">-</b></span></p>
+            <p class="booking-note">בוחרים שעה, ממלאים שם וטלפון - והתור נקבע. אישור מגיע במייל.</p>
             <div id="booking-embed"></div>
             <p class="booking-links"><a id="booking-open" href="https://calendar.app.google/AjBpTiq83HcScdmi9" target="_blank" rel="noopener">פתיחה בחלון חדש</a> · <a href="thank-you.html">קבעתי תור ←</a></p>
           </div>
@@ -286,8 +257,8 @@
   </footer>
 
   <!-- Sticky bottom bar on phones -->
-  <div class="sticky" id="sticky"><a class="btn" href="#book">לקביעת טיפול</a><a class="wa" id="sticky-wa" href="#" target="_blank" rel="noopener" data-ev="Contact">וואטסאפ</a></div>
+  <div class="sticky" id="sticky"><a class="btn" href="#book">לקביעת טיפול</a><a class="wa" id="sticky-wa" href="#" target="_blank" rel="noopener" data-ev="Contact" aria-label="וואטסאפ"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a><button type="button" class="a11y-open" aria-label="תפריט נגישות"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="12" cy="4" r="2" fill="currentColor"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5m0 0l-3.5 6.5M12 15l3.5 6.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 
-  <script src="page.js"></script>
+  <script src="page.js?v=1114r"></script>
 </body>
 </html>
