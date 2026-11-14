@@ -35,6 +35,13 @@ window.SITE_CONFIG = {
   // Example: "https://script.google.com/macros/s/AKfy.../exec"
   LEAD_WEBHOOK_URL: "",
 
+  // The landing page /lp/ sends each lead (name, phone, what the body needs,
+  // preferred day, utm_*) here as JSON. It's the engine's /api/lead,
+  // which saves it to the CRM and has the agent write to them on WhatsApp.
+  // Leave "" until the engine is live. While it's empty, the thank-you on /lp/
+  // asks people to send their details to Amit's WhatsApp themselves.
+  LEAD_ENDPOINT: "",
+
   // ---------- Business details ----------
   PRACTICE_NAME: "[Practice Name]",
   THERAPIST_NAME: "Amit Kaliskar",
@@ -42,6 +49,9 @@ window.SITE_CONFIG = {
   SESSION_LENGTH_MINUTES: 75,
   ADDRESS: "Derech HaArava 48, Geva Carmel",
   ADDRESS_HE: "דרך הערבה 48, גבע כרמל",
+  // Where to park, one short line (used by /lp/). Leave "" to hide it.
+  PARKING: "",
+  PARKING_HE: "",
 
   // Phone as people read it, and in international format for links.
   PHONE_DISPLAY: "053-208-3010",
