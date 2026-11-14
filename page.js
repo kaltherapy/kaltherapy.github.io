@@ -1,6 +1,6 @@
 // Landing page logic, shared by the Hebrew (index.html) and English (en/index.html)
-// pages: photos/videos from config.js, "next available slot", the lead form,
-// and the booking step (Google Calendar appointment schedule).
+// pages: photos/videos from config.js, "next available slot", the details form,
+// the booking step (Google Calendar appointment schedule) and the payment step.
 (function () {
   var C = window.SITE_CONFIG;
   var he = window.SITE_LANG === 'he';
@@ -11,6 +11,7 @@
     errPhone: 'נא למלא מספר טלפון שאפשר לחזור אליו.',
     errEmail: 'נא לבדוק את כתובת האימייל.',
     hello: function (first) { return 'תודה, ' + first + ' - עכשיו בוחרים מועד'; },
+    payBtn: 'קבעתי - לתשלום <span class="arr">←</span>',
     calendarTitle: 'יומן קביעת תורים',
     heroAlt: 'עמית מעסה את גב המטופלת', aboutAlt: 'עמית קליסקר', photoAlt: 'טיפול בקליניקה',
     days: ['יום ראשון', 'יום שני', 'יום שלישי', 'יום רביעי', 'יום חמישי', 'יום שישי', 'מוצ"ש']
@@ -19,6 +20,7 @@
     errPhone: 'Please enter a phone number we can reach you on.',
     errEmail: 'Please check your email address.',
     hello: function (first) { return 'Thanks, ' + first + ', now choose a time'; },
+    payBtn: 'I\'ve booked - pay now <span class="arr">→</span>',
     calendarTitle: 'Booking calendar',
     heroAlt: 'Amit massaging a client\'s back', aboutAlt: 'Amit Kaliskar', photoAlt: 'Treatment at the clinic',
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday night']
@@ -141,8 +143,73 @@
     });
   });
 
-  // ---------- Booking: the Google appointment calendar, loaded when the section gets close ----------
-  // There is no site form: Google's booking form asks for name and phone once, and books straight into the calendar.
+  // ---------- Step 1: the details form ----------
+  // Name and phone go to the clinic's engine (C.LEAD_ENDPOINT, the CRM). If nothing is booked within the
+  // hour it writes on WhatsApp; once a booking shows up in the calendar it sends the payment link.
+  // The details stay in this browser (localStorage) so the form is filled in on the next visit.
+  // Google's booking form can't be filled in from here: it fills itself for people signed in to Google.
+  var SAVED = 'kal_lead';
+  var lead = {};
+  try { lead = JSON.parse(localStorage.getItem(SAVED)) || {}; } catch (x) {}
+  if ($('name') && lead.name) $('name').value = lead.name;
+  if ($('phone') && lead.phone) $('phone').value = lead.phone;
+
+  function setPay(url) {
+    if (!url || !$('to-pay')) return;
+    $('to-pay').href = url;
+    $('to-pay').innerHTML = T.payBtn;
+    $('to-pay').setAttribute('data-pay', '1');
+    $('pay-note').hidden = false;
+  }
+  try { setPay(sessionStorage.getItem('payUrl')); } catch (x) {}
+
+  if ($('lead-form')) $('lead-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = $('name').value.trim();
+    var phone = $('phone').value.trim();
+    var err = '';
+    if (name.length < 2) err = T.errName;
+    else if (phone.replace(/\D/g, '').length < 9) err = T.errPhone;
+    $('form-error').textContent = err;
+    if (err) return;
+
+    var focus = $('focus-input') ? $('focus-input').value : '';
+    lead = { name: name, phone: phone, focus: focus, lang: window.SITE_LANG, page: location.href, time: new Date().toISOString() };
+    var q = new URLSearchParams(location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) { if (q.get(k)) lead[k] = q.get(k); });
+    try { localStorage.setItem(SAVED, JSON.stringify({ name: name, phone: phone })); } catch (x) {}
+    try { sessionStorage.setItem('lead', JSON.stringify(lead)); } catch (x) {}
+
+    window.track('Lead');
+
+    if (C.LEAD_ENDPOINT) {
+      var body = { client: C.LEAD_FORM_ID || 'amit-massage', flow: 'book', name: name, phone: phone, need: focus, website: $('website') ? $('website').value : '' };
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) { if (lead[k]) body[k] = lead[k]; });
+      try {
+        fetch(C.LEAD_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (j && j.payUrl) { try { sessionStorage.setItem('payUrl', j.payUrl); } catch (x) {} setPay(j.payUrl); }
+          })
+          .catch(function () {});
+      } catch (x) {}
+    }
+    if (C.LEAD_WEBHOOK_URL) {
+      try { fetch(C.LEAD_WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(lead) }); } catch (x) {}
+    }
+    showBooking();
+  });
+
+  if ($('back-btn')) $('back-btn').addEventListener('click', function () {
+    $('booking-step').classList.remove('on');
+    $('form-step').style.display = '';
+    $('book-card').classList.remove('wide');
+    if ($('bookwrap')) $('bookwrap').classList.remove('booking');
+    $('p2').classList.remove('on');
+    $('book').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // ---------- Step 2: the Google appointment calendar ----------
   if ($('booking-open') && C.BOOKING_LINK) $('booking-open').href = C.BOOKING_LINK;
   function loadCalendar() {
     if (!$('booking-embed') || $('booking-embed').querySelector('iframe') || !C.BOOKING_URL) return;
@@ -153,20 +220,32 @@
     f.style.border = '0';
     f.width = '100%';
     f.height = '600';
-    f.loading = 'lazy';
     $('booking-embed').appendChild(f);
   }
-  if ('IntersectionObserver' in window && $('book')) {
-    var bio = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { loadCalendar(); bio.disconnect(); } }, { rootMargin: '900px 0px' });
-    bio.observe($('book'));
-  } else { loadCalendar(); }
+  function showBooking() {
+    $('form-step').style.display = 'none';
+    $('booking-step').classList.add('on');
+    $('book-card').classList.add('wide');
+    if ($('bookwrap')) $('bookwrap').classList.add('booking'); // the calendar gets the full width
+    $('p2').classList.add('on');
+    $('booking-hello').textContent = T.hello(lead.name.split(' ')[0]);
+    $('book').scrollIntoView({ behavior: 'smooth' });
+    loadCalendar();
+  }
   // Clicking any "book" button counts as starting a booking (for the ads)
   var started = false;
   document.querySelectorAll('a[href="#book"]').forEach(function (a) {
-    a.addEventListener('click', function () { if (!started) { started = true; window.track('InitiateCheckout'); } loadCalendar(); });
+    a.addEventListener('click', function () { if (!started) { started = true; window.track('InitiateCheckout'); } });
   });
 
-  // ---------- After booking ----------
-  // Google doesn't tell this page when a booking is made, so the "I've booked"
-  // link leads to thank-you.html (which reports "Schedule" to the Pixel).
+  // ---------- Step 3: pay ----------
+  // With online payment set up, "I've booked" goes to this person's payment page; Morning then sends
+  // them to paid.html. Without it, to thank-you.html as before.
+  if ($('to-pay')) $('to-pay').addEventListener('click', function () {
+    $('p3').classList.add('on');
+    if ($('to-pay').getAttribute('data-pay')) window.track('AddPaymentInfo');
+  });
+
+  // Google doesn't tell this page when a booking is made: the engine sees it in the calendar
+  // (every five minutes) and matches it to the details here by phone number.
 })();

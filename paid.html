@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>התשלום התקבל | עמית קליסקר</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Bellefair&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1114u">
+  <script src="config.js?v=1114t"></script>
+
+  <!-- ======================= META PIXEL =======================
+       Nothing to paste here: site.js adds the Pixel automatically
+       once META_PIXEL_ID is set in config.js, and this page then
+       reports a "Purchase" event to Facebook.
+       If Meta ever asks you to paste extra code, put it right here.
+       ========================================================= -->
+  <script src="site.js?v=1114t"></script>
+  <script src="a11y.js?v=1114t" defer></script>
+</head>
+<body class="no-wa-float">
+  <a class="skip-link" href="#main">דלגו לתוכן</a>
+  <main id="main" tabindex="-1" class="thanks">
+    <div class="wrap">
+      <div class="card">
+        <svg class="horizon-mark" viewBox="0 0 68 40" aria-hidden="true"><path d="M0 34h68" stroke="currentColor" stroke-width="1.6"/><path d="M18 34a16 16 0 0 1 32 0" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h1 id="title">התשלום התקבל, תודה!</h1>
+        <p class="muted">התור שלך שמור. אישור עם כל הפרטים להגעה נשלח אליך עכשיו בוואטסאפ, ויום לפני הטיפול תגיע תזכורת.</p>
+        <p class="muted">הקבלה נשלחת אליך מ-Morning (חשבונית ירוקה).</p>
+        <p class="muted">לא הגיעה הודעה בוואטסאפ תוך כמה דקות? כתבו לי:</p>
+        <div class="contact-grid" data-contact></div>
+
+        <p style="margin-top:20px"><a href="./" class="back-link">→ חזרה לאתר</a></p>
+      </div>
+    </div>
+    <p class="muted" style="text-align:center"><a href="cancellation.html">מדיניות ביטולים</a> · <a href="accessibility.html">הצהרת נגישות</a></p>
+  </main>
+  <script>try { sessionStorage.removeItem('payUrl'); } catch (e) {} window.track('Purchase', { value: (window.SITE_CONFIG.PRICE || 300), currency: 'ILS' });</script>
+</body>
+</html>

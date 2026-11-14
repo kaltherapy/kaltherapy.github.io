@@ -273,7 +273,8 @@ footer .brand svg { color: var(--sun); }
 img[src$="massage-103.jpg"] { object-position: 50% 30%; }
 
 /* ---------- Thank-you + privacy pages ---------- */
-.thanks { min-height: 100vh; display: flex; align-items: center; padding: 40px 0; }
+.thanks { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0; }
+.thanks > .wrap { width: 100%; }
 .card { background: var(--paper); border: 1px solid var(--line); padding: 40px 32px; max-width: 580px; margin: 0 auto; }
 .thanks .card { text-align: center; }
 .thanks h1, .card h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); }

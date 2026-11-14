@@ -35,12 +35,12 @@ window.SITE_CONFIG = {
   // Example: "https://script.google.com/macros/s/AKfy.../exec"
   LEAD_WEBHOOK_URL: "",
 
-  // The landing page /lp/ sends each lead (name, phone, what the body needs,
-  // preferred day, utm_*) here as JSON. It's the engine's /api/lead,
-  // which saves it to the CRM and has the agent write to them on WhatsApp.
-  // Leave "" until the engine is live. While it's empty, the thank-you on /lp/
-  // asks people to send their details to Amit's WhatsApp themselves.
-  LEAD_ENDPOINT: "",
+  // The booking form (index.html) and the landing page /lp/ send each lead
+  // (name, phone, utm_*) here as JSON. It's the engine's /api/lead, which saves
+  // it to the CRM. From the booking form it also answers with the person's
+  // payment link (once Morning is connected), for the "pay" button.
+  LEAD_ENDPOINT: "https://clinic-engine-seven.vercel.app/api/lead",
+  LEAD_FORM_ID: "amit-massage",   // מזהה טופס in system/engine/client.json
 
   // ---------- Business details ----------
   PRACTICE_NAME: "[Practice Name]",
